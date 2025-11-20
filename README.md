@@ -35,11 +35,11 @@ checkm2_database=/path/to/CheckM2_database/uniref100.KO.1.dmnd
 ## Usage
 
 ```bash
-# make executable (optional)
-chmod +x assemble_all.sh
+# make executable 
+chmod +x ShortReadAssembler.sh
 
 # run
-./assemble_all.sh | tee run.log
+./ShortReadAssembler.sh | tee run.log
 ```
 
 The script activates the `ShortReadAssembler` environment first and later switches to `checkm2` for CheckM2.
