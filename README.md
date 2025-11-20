@@ -44,7 +44,7 @@ chmod +x assemble_all.sh
 bash assemble_all.sh | tee run.log
 ```
 
-The script activates the `illumina` environment first and later switches to `checkm2` for CheckM2.
+The script activates the `ShortReadAssembler` environment first and later switches to `checkm2` for CheckM2.
 It uses `eval "$(conda shell.bash hook)"`, so ensure conda is installed and accessible.
 
 ## Workflow
