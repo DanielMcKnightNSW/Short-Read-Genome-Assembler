@@ -41,7 +41,7 @@ chmod +x assemble_all.sh
 # run
 ./assemble_all.sh
 # or
-bash assemble_all.sh
+bash assemble_all.sh | tee run.log
 ```
 
 The script activates the `illumina` environment first and later switches to `checkm2` for CheckM2.
