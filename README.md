@@ -34,6 +34,11 @@ checkm2_database=/path/to/CheckM2_database/uniref100.KO.1.dmnd
 
 ## Usage
 
+1) Put your reads in a subdirectory named 00_reads/  
+   - Accepted formats: .fastq.gz
+
+2) Edit configurable parameters at the top of the script:
+   - THREADS, SPADES_THREADS, MEMORY_GB, LENGTH_FILTER, checkm2_database
 ```bash
 # make executable 
 chmod +x ShortReadAssembler.sh
