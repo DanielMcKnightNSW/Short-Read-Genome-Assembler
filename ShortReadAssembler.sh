@@ -20,7 +20,7 @@ set -o pipefail
 
 # --- Activate illumina conda environment ---
 eval "$(conda shell.bash hook)"
-conda activate illumina
+conda activate ShortReadAssembler
 
 # ==============================================================================
 #  CONFIGURATION (EDIT THESE VARIABLES)
