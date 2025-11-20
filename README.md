@@ -7,9 +7,9 @@ Resumable, per‑sample, and skips completed steps.
 ## Requirements
 
 - Bash + Conda
-- Tools (installed in the named conda envs used by the script):
-  - illumina env: fastqc, fastp, spades.py, minimap2, racon, seqtk
-  - checkm2 env: checkm2 (with a valid CheckM2 database)
+- Tools:
+  - ShortReadAssembler.yml: assembly-stats, fastqc, fastp, spades.py, minimap2, racon, seqtk
+  - checkm2.yml: checkm2 (with a valid CheckM2 database)
 - Sufficient CPU/RAM (defaults are very high; adjust before running)
 
 ## Input
