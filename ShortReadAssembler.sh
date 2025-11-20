@@ -140,8 +140,8 @@ echo "================================================="
 echo "[6/6] Running assembly-stats on all final assemblies..."
 echo "================================================="
 
-# Switch back to illumina conda environment
-conda activate illumina
+# Switch back to ShortReadAssembler conda environment
+conda activate ShortReadAssembler
 
 # Run assembly-stats on all final assemblies and save to file
 assembly-stats 04_final_assemblies/*.fasta > 04_final_assemblies/assembly_stats_report.txt
