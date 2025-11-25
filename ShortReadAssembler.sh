@@ -1,9 +1,8 @@
 #!/bin/bash
 
-#
 # This script automates the assembly of short reads for all samples in the current directory.
 # It expects paired-end reads in a directory named 'reads' ending in _R1.fastq.gz and _R2.fastq.gz.
-#
+
 # Workflow:
 # 1. FastQC: Raw read quality control.
 # 2. fastp: Adapter and quality trimming.
@@ -11,7 +10,6 @@
 # 4. seqtk: Filter contigs by minimum length.
 # 5. CheckM2: Quality assessment of all assemblies.
 # 6. assembly-stats: Generate assembly statistics for all assemblies.
-#
 
 # --- Stop script on any error ---
 # The following line is changed from 'set -e' to 'set +e' to allow the script to continue after an error.
@@ -22,15 +20,13 @@ set -o pipefail
 eval "$(conda shell.bash hook)"
 conda activate ShortReadAssembler
 
-# ==============================================================================
-#  CONFIGURATION (EDIT THESE VARIABLES)
-# ==============================================================================
+# --- Configurable Parameters ---
 THREADS=120                                         # Number of CPU threads to use for each step
-SPADES_THREADS=6                                   # Number of CPU threads for SPADES                                         
+SPADES_THREADS=6                                    # Number of CPU threads for SPADES                                         
 MEMORY_GB=200                                       # Max memory for SPAdes in Gigabytes
 LENGTH_FILTER=500                                   # Minimum contig length to keep
 checkm2_database=/home/mcknid01/softwareDependencies/CheckM2_database/uniref100.KO.1.dmnd  # CheckM2 database path
-# ==============================================================================
+READS_DIR="reads"                                   # Directory containing input read files
 
 echo "Starting the assembly pipeline..."
 
@@ -39,7 +35,7 @@ mkdir -p 01_fastqc 02_trimmed_reads 03_assemblies 04_final_assemblies
 touch failed.txt
 
 # --- Main processing loop for each sample ---
-for R1 in 00_reads/*_R1.fastq.gz; do
+for R1 in "${READS_DIR}"/*_R1.fastq.gz; do
     # --- Define sample names and files ---
     R2="${R1/_R1.fastq.gz/_R2.fastq.gz}"
     ID=$(basename "$R1" _R1.fastq.gz)
