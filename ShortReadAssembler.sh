@@ -22,10 +22,10 @@ conda activate ShortReadAssembler
 
 # --- Configurable Parameters ---
 THREADS=120                                         # Number of CPU threads to use for each step
-SPADES_THREADS=6                                    # Number of CPU threads for SPADES                                         
-MEMORY_GB=200                                       # Max memory for SPAdes in Gigabytes
+SPADES_THREADS=8                                    # Number of CPU threads for SPADES                                         
+MEMORY_GB=500                                       # Max memory for SPAdes in Gigabytes
 LENGTH_FILTER=500                                   # Minimum contig length to keep
-checkm2_database=/home/mcknid01/softwareDependencies/CheckM2_database/uniref100.KO.1.dmnd  # CheckM2 database path
+checkm2_database= file/path/to/checkm2/diamond/database/uniref100.KO.1.dmnd  # CheckM2 database path
 READS_DIR="reads"                                   # Directory containing input read files
 
 echo "Starting the assembly pipeline..."
