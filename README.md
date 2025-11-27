@@ -1,6 +1,6 @@
 # Short-Read-Genome-Assembler
 
-Batch pipeline for Illumina paired‑end reads:
+An automated pipeline for genome assembly using Illumina paired-end sequencing:
 FastQC → fastp → SPAdes → Racon → seqtk → CheckM2.
 Resumable, per‑sample, and skips completed steps.
 
@@ -34,11 +34,12 @@ checkm2_database=/path/to/CheckM2_database/uniref100.KO.1.dmnd
 
 ## Usage
 
-1) Put your reads in a subdirectory named 00_reads/  
+1) Put your reads in your assigned READS_DIR 
+   - (subdirectory named 'reads' by default)
    - Accepted formats: .fastq.gz
 
 2) Edit configurable parameters at the top of the script:
-   - THREADS, SPADES_THREADS, MEMORY_GB, LENGTH_FILTER, checkm2_database
+   - THREADS, SPADES_THREADS, MEMORY_GB, LENGTH_FILTER, checkm2_database, reads directory
 ```bash
 # make executable 
 chmod +x ShortReadAssembler.sh
